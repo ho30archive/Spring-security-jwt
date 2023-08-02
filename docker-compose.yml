@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: miniProject_mysql2
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: "miniProject2"
+      MYSQL_PASSWORD: "miniProject2!@"
+      MYSQL_DATABASE: "miniProject2"
+    ports:
+      - "3312:3306"
+    command:
+      - "mysqld"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"

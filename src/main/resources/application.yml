@@ -1,0 +1,44 @@
+
+spring:
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3312/miniProject2
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: miniProject2
+    password: miniProject2!@
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create # create or update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+#    defer-datasource-initialization: true
+
+#  sql:
+#    init:
+#      mode: always
+#      data-locations: classpath:data.sql
+
+jwt:
+  secret: ZG9uZ2h1bi1zaGFycC1kYnJ1YS13ZWItcHJvamVjdC11c2luZy1qd3Qtc2VjcmV0LURvbmdodW4tc3ByaW5nLWJvb3Qtand0LWJhY2stZW5kLWFuZC1qcy1jb2xsYWJv
+  #base64? ???? ?? ?, HS512? ??? ??? ???, 512??(64???) ??? ??? ???. ?? ????
+#
+#  access:
+#    expiration: 1800 # 30?
+#    header: Authorization
+#
+#  refresh:
+#    expiration: 1209600 # 2?
+#    header: Authorization-refresh
